@@ -1,0 +1,12 @@
+#mobs {
+	height: 400px;
+	width: 400px;
+	float: right;
+}
+.upgrades img {
+	height: 50px;
+	width: 50px;
+}
+.cookiecount p {
+	font-size: 50px;
+}

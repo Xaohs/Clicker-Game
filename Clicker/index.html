@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<link rel="stylesheet" type="text/css" href="interface.css" />
+<script type="text/javascript" src="main.js"></script>
+<head><title>Cookiezi</title></head>
+<body>
+<!-- Cookies per second -->
+	<div class="cookiecount"><p id="cookiespersecond">0 Cookies/s</p></div>
+   	<br><br>
+    	<input type="text" id="text" disabled style= text-align:center value=0>
+    <br><br>
+<!-- Save and Load -->
+	<button><a href="#" onClick="save()">Save</a></button>
+	<button><a href="#" onClick="load()">Load</a></button>
+	<br><br>
+<!-- *Upgrades* -->
+<!-- Auto clicker -->
+<div class="upgrades">
+	<p>Auto Clicker</p>
+		<button><a href="#" onClick="buyAutoClick()"><img src="shit/autoclicker.png"></a></button>
+	<p id="costAutoClick">12 Cookies</p>
+	<p id="ammountAutoClick">You Own 0 Auto Clickers</p>
+<!-- Farm -->
+	<p>Farm</p>
+	<button><a href="#" onClick="buyFarm()"><img src="shit/farm.png"></a></button>
+	<p id="costFarms">15 Cookies </p>
+	<p id="ammountFarms">You Own 0 Farms</p>
+</div>
+</body>
+
+</html>
