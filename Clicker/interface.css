@@ -1,12 +1,39 @@
-#mobs {
-	height: 400px;
-	width: 400px;
-	float: right;
+body {
+	background: grey;
 }
+/*.mainContainer {
+	margin-top: 1px;
+	border: solid red;
+	border-width: 3px;
+}*/
+/*The mobs*/
+#mobs {
+	height: 435px;
+	width: 435px;
+	position: absolute;
+	left: 900px;
+	top: 150px;
+	
+	/*border: solid red; border-width: 3px;*/
+}
+/*All upgrade related*/
 .upgrades img {
 	height: 50px;
 	width: 50px;
 }
-.cookiecount p {
+/*All counting related*/
+#goldCount {
+	position: absolute;
+	text-align: center;
 	font-size: 50px;
+	color: #FFD700;
+	left: 1020px;
 }
+#dps {
+	position: absolute;
+	text-align: center;
+	font-size: 25px;
+	left: 500px;
+}
+
+

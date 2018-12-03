@@ -1,65 +1,67 @@
 function update() {
-// Cookie counter
-	document.getElementById('text').value = cookiecount;
-	document.title = cookiecount + " Cookies";
-// Auto clicker counter
-	document.getElementById('ammountAutoClick').innerHTML = "You Own " + autoClick + " Auto Clickers";
-	document.getElementById('costAutoClick').innerHTML = ((autoClick+1) * 12) + " Cookies";
-// Farm counter
-	document.getElementById('ammountFarms').innerHTML = "You own " + farms + " Farms";
-	document.getElementById('costFarms').innerHTML = ((farms+1) * 15 + " Cookies");
+// Title counter
+	document.title = cookiecount + " DPS";
+// Gold Counter
+	document.getElementById('goldCount').innerHTML = "Gold " + cookiecount;
+// Doran's Blade counter
+	document.getElementById('ammountDoranBlade').innerHTML = "You own " + doranBlade + " Doran's Blades";
+	document.getElementById('costDoranBlade').innerHTML = ((doranBlade+1) * 12) + " Gold";
+// Long Sword counter
+	document.getElementById('ammountLongSword').innerHTML = "You own " + longSwords + " Long Swords";
+	document.getElementById('costLongSword').innerHTML = ((longSwords+1) * 15 + " Gold");
 // DPS Counter
-	document.getElementById('cookiespersecond').innerHTML = + (((autoClick)+ (farms*2))*multiplier) + " Cookies/s";
-
-
+	document.getElementById('dps').innerHTML = + (((doranBlade)+ (longSwords*2))*multiplier) + " DPS";
+// Damage per click (AD)
+	document.getElementById('adCount').innerHTML = "AD " + (adCount);
 }
 // Variables
 var multiplier = 1;
 var cookiecount = 0;
-var autoClick = 0;
-var farms = 0;
+var doranBlade = 0;
+var longSwords = 0;
+var adCount = 1;
 
-// Every click adds 1 cookie
+// Every click adds 1 gold
 function add() {
 	cookiecount = cookiecount + 1
 	update()
 }
-// Amount per upgrade
+// DPS Increment per upgrade
 function timer() {
-	cookiecount = cookiecount + autoClick;
-	cookiecount = cookiecount + farms*2;
+	cookiecount = cookiecount + doranBlade;
+	cookiecount = cookiecount + longSwords*2;
 	update()
 }
 setInterval(timer, 1000)
 // Save & Load
 function save() {
 	localStorage.setItem("cookiecount", cookiecount);
-	localStorage.setItem("autoClick", autoClick);
-	localStorage.setItem("farms", farms);
+	localStorage.setItem("doranBlade", doranBlade);
+	localStorage.setItem("longSwords", longSwords);
 }
 function load() {
 	cookiecount = localStorage.getItem("cookiecount");
 	cookiecount = parseInt(cookiecount);
-	autoClick = localStorage.getItem("autoClick");
-	autoClick = parseInt(autoClick);
-	farms = localStorage.getItem("farms");
-	farms = parseInt(farms);
+	doranBlade = localStorage.getItem("doranBlade");
+	doranBlade = parseInt(doranBlade);
+	longSwords = localStorage.getItem("longSwords");
+	longSwords = parseInt(longSwords);
 	update()
 }
 // Upgrades
-	// Auto clicker
-function buyAutoClick() {
-	if (cookiecount >= ((autoClick+1) * 12)) {
-		cookiecount = cookiecount - ((autoClick+1) * 12);
-		autoClick = autoClick + 1;
+	// Doran's Blade
+function buyDoranBlade() {
+	if (cookiecount >= ((doranBlade+1) * 12)) {
+		cookiecount = cookiecount - ((doranBlade+1) * 12);
+		doranBlade = doranBlade + 1;
 		update()
 	}
 }
-	// Farm
-function buyFarm() {
-	if (cookiecount >= ((farms+1) * 15)) {
-		cookiecount = cookiecount - ((farms+1) * 15);
-		farms = farms + 1;
+	// Long Sword
+function buyLongSword() {
+	if (cookiecount >= ((longSwords+1) * 15)) {
+		cookiecount = cookiecount - ((longSwords+1) * 15);
+		longSwords = longSwords + 1;
 		update()
 	}
 }
@@ -83,4 +85,5 @@ ry=1
 document.write('<a href=# onclick="add()"><img id="mobs" src="'+myimages[ry]+'" border=0></a>')
 }
 random_imglink()
-//-->
+// Disable ghost dragging
+document.getElementById('mobs').ondragstart = function() { return false; };
