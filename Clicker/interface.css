@@ -13,7 +13,7 @@ body {
 	position: absolute;
 	left: 900px;
 	top: 150px;
-	
+	border-radius: 700px;
 	/*border: solid red; border-width: 3px;*/
 }
 /*All upgrade related*/
